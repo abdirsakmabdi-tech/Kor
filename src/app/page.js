@@ -1,5 +1,6 @@
 import About from "@/components/About";
 import Hero from "@/components/Hero";
+import News from "@/components/News";
 import Partner from "@/components/Partner";
 import Services from "@/components/Services";
 import SiteFooter from "@/components/SiteFooter";
@@ -18,6 +19,7 @@ export default function Home() {
         <WorkIntro />
         <WorkSteps />
         <Partner />
+        <News />
       </main>
       <SiteFooter />
     </>

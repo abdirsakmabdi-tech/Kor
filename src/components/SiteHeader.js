@@ -6,6 +6,7 @@ import styles from "./SiteHeader.module.css";
 const pageLinks = [
   { href: "/#home", label: "Home" },
   { href: "/work", label: "Our Work" },
+  { href: "/#news", label: "News" },
   { href: "/#services", label: "Our Services" },
   { href: "/contact", label: "Contact" },
 ];

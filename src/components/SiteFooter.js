@@ -6,6 +6,7 @@ const primaryLinks = [
   { href: "/contact", label: "Contact Us" },
   { href: "/contact#find", label: "Locations" },
   { href: "/work", label: "Our Work" },
+  { href: "/#news", label: "News" },
   { href: "/#services", label: "Our Services" },
   { href: "/contact", label: "Privacy Statement" },
   { href: "/contact", label: "Terms & Conditions" },

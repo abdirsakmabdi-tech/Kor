@@ -1,0 +1,150 @@
+.page {
+  background: #ffffff;
+  color: #111111;
+}
+
+.intro {
+  padding: 72px 80px 0;
+}
+
+.kicker {
+  color: #0249d9;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  max-width: 12em;
+  margin-top: 16px;
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.lead {
+  max-width: 38em;
+  margin-top: 24px;
+  color: #333333;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.figure {
+  margin: 40px 80px 0;
+}
+
+.figure img {
+  display: block;
+  width: 100%;
+  height: min(68vh, 680px);
+  object-fit: cover;
+  object-position: center 42%;
+  background: #f3f4f5;
+}
+
+.story {
+  padding: 8px 80px 0;
+}
+
+.block {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 24px;
+  padding: 40px 0;
+  border-top: 1px solid #e6e6e6;
+}
+
+.block:last-child {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.index {
+  padding-top: 8px;
+  color: #8a8a8a;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.block h2 {
+  max-width: 16em;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.block p {
+  max-width: 40em;
+  margin-top: 16px;
+  color: #222222;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.back {
+  padding: 40px 80px 88px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.back a:hover {
+  color: #0249d9;
+}
+
+@media (max-width: 800px) {
+  .intro {
+    padding: 48px 24px 0;
+  }
+
+  .intro h1 {
+    font-size: 32px;
+  }
+
+  .lead {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .figure {
+    margin: 28px 24px 0;
+  }
+
+  .figure img {
+    height: 240px;
+  }
+
+  .story {
+    padding: 8px 24px 0;
+  }
+
+  .block {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 32px 0;
+  }
+
+  .index {
+    padding-top: 0;
+  }
+
+  .block h2 {
+    font-size: 24px;
+  }
+
+  .block p {
+    font-size: 16px;
+    line-height: 1.55;
+  }
+
+  .back {
+    padding: 32px 24px 56px;
+    font-size: 16px;
+  }
+}
