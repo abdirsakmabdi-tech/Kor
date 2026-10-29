@@ -28,19 +28,60 @@
   line-height: 1.5;
 }
 
+.stories {
+  min-width: 0;
+}
+
+.window {
+  overflow: hidden;
+  width: 100%;
+  touch-action: pan-y;
+}
+
+.track {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  will-change: transform;
+}
+
+.feature,
+.textCard {
+  flex: 0 0 78%;
+}
+
 .feature {
   display: block;
   color: inherit;
 }
 
+.feature img,
+.textCard {
+  height: 320px;
+  border-radius: 22px;
+}
+
 .feature img {
   display: block;
   width: 100%;
-  height: 320px;
   object-fit: cover;
   object-position: center 42%;
-  border-radius: 22px;
   background: #f3f4f5;
+}
+
+.textCard {
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  background: #0249d9;
+}
+
+.textCard h3 {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .feature h3 {
@@ -54,6 +95,54 @@
 
 .feature:hover h3 {
   color: #0249d9;
+}
+
+.slider {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 14px;
+  margin: 22px 0 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.slider:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.slider::-webkit-slider-runnable-track {
+  height: 6px;
+  background: #8d8d8d;
+  border-radius: 999px;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  margin-top: -4px;
+  border: 0;
+  border-radius: 1px;
+  background: #ffffff;
+}
+
+.slider::-moz-range-track {
+  height: 6px;
+  background: #8d8d8d;
+  border: 0;
+  border-radius: 999px;
+}
+
+.slider::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 1px;
+  background: #ffffff;
 }
 
 @media (max-width: 800px) {
@@ -75,9 +164,23 @@
     font-size: 16px;
   }
 
-  .feature img {
+  .feature,
+  .textCard {
+    flex-basis: 86%;
+  }
+
+  .feature img,
+  .textCard {
     height: 180px;
     border-radius: 16px;
+  }
+
+  .textCard {
+    padding: 16px;
+  }
+
+  .textCard h3 {
+    font-size: 20px;
   }
 
   .feature h3 {
