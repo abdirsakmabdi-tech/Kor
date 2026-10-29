@@ -79,7 +79,7 @@
   align-items: stretch;
   justify-content: space-between;
   height: 52px;
-  padding: 0 64px;
+  padding: 0 80px;
 }
 
 .brand {
@@ -118,6 +118,10 @@
   align-items: center;
   height: 100%;
   padding: 0 22px;
+}
+
+.brand {
+  padding-left: 0;
 }
 
 .menuLabel,
