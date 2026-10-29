@@ -1,0 +1,375 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 80px;
+  background: #ffffff;
+}
+
+.menuButton,
+.subnavToggle,
+.closeButton,
+.globeButton,
+.pageMenu {
+  display: none;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  display: block;
+  height: 42px;
+  width: auto;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.searchInput {
+  width: 220px;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 0;
+  background: #ffffff;
+  color: #000000;
+  font-size: 14px;
+}
+
+.searchInput:focus {
+  outline: 2px solid #000000;
+  outline-offset: 1px;
+}
+
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  color: #000000;
+  cursor: pointer;
+}
+
+.searchButton svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.subnav {
+  background: var(--logo);
+  color: #ffffff;
+}
+
+.subnavBar {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 52px;
+  padding: 0 64px;
+}
+
+.brand {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.links {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  gap: 4px;
+}
+
+.links a {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: -0.07px;
+  line-height: 21px;
+}
+
+.brand,
+.links a,
+.pageMenu a,
+.menuRow,
+.menuLabel,
+.subList a {
+  position: relative;
+  text-decoration: none;
+}
+
+.brand,
+.links a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 22px;
+}
+
+.menuLabel,
+.subList a {
+  display: inline-block;
+  width: fit-content;
+}
+
+.brand::before,
+.links a::before,
+.pageMenu a::before,
+.menuRow::before,
+.subList a::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: transparent;
+  transition: background-color 0.6s ease;
+}
+
+.brand,
+.links a,
+.pageMenu a,
+.menuRow,
+.subList a {
+  z-index: 0;
+}
+
+.menuLabel::after,
+.subList a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.6s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .brand:hover::before,
+  .links a:hover::before,
+  .pageMenu a:hover::before,
+  .menuRow:hover::before,
+  .subList a:hover::before {
+    background: var(--menu-hover);
+  }
+
+  .brand:hover .menuLabel::after,
+  .links a:hover .menuLabel::after,
+  .pageMenu a:hover .menuLabel::after,
+  .menuRow:hover .menuLabel::after,
+  .subList a:hover::after {
+    transform: scaleX(1);
+  }
+
+  .social a:hover {
+    color: var(--menu-hover);
+  }
+}
+
+@media (max-width: 800px) {
+  .topbar {
+    position: relative;
+    height: 64px;
+    padding: 0 12px;
+  }
+
+  .menuButton,
+  .subnavToggle,
+  .closeButton,
+  .globeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .menuButton svg,
+  .subnavToggle svg,
+  .closeButton svg,
+  .globeButton svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .menuButton {
+    color: #000000;
+  }
+
+  .logoLink {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .logo {
+    height: 32px;
+  }
+
+  .searchInput {
+    position: absolute;
+    top: 64px;
+    right: 12px;
+    left: 12px;
+    z-index: 2;
+    width: auto;
+  }
+
+  .subnavBar {
+    height: 48px;
+    padding: 0 24px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .subnavToggle svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .subnavToggle[aria-expanded="true"] svg {
+    transform: rotate(180deg);
+  }
+
+  .pageMenu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 24px 16px;
+  }
+
+  .pageMenu a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 12px 22px 40px;
+    background: #1c1c1c;
+    color: #ffffff;
+  }
+
+  .overlayTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+
+  .closeButton svg,
+  .globeButton svg {
+    width: 26px;
+    height: 26px;
+  }
+
+  .menuList {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  .menuRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 16px;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .chevron,
+  .chevronOpen {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .chevronOpen {
+    transform: rotate(90deg);
+  }
+
+  .subList {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 16px;
+    color: #d5d5d5;
+    font-size: 16px;
+  }
+
+  .secondaryList {
+    margin-top: 34px;
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-top: 48px;
+  }
+
+  .social a {
+    display: flex;
+    color: #ffffff;
+  }
+
+  .social svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+}

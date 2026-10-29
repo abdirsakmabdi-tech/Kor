@@ -1,0 +1,237 @@
+/* Saved snapshot. Pair with Services.js in this folder. */
+
+.section {
+  position: relative;
+  background: #ffffff;
+  color: #000000;
+  padding: 0 0 80px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 56px 80px 28px;
+}
+
+.header h2 {
+  font-size: clamp(32px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .viewAll:hover .icon {
+    background: #7500c0;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  height: 420px;
+  padding: 0 80px;
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  flex: 1 1 0;
+  height: 100%;
+  min-width: 0;
+  min-height: 0;
+  max-height: 100%;
+  overflow: hidden;
+  background: #141414;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.studio {
+  background: #f3f0ea;
+  color: #111111;
+}
+
+.paper {
+  background: #ffffff;
+  color: #111111;
+}
+
+.signal {
+  background: #14082a;
+  color: #ffffff;
+}
+
+.field {
+  background: #e7e2da;
+  color: #111111;
+}
+
+.art {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 58%;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.signal .art {
+  top: 0;
+  height: 100%;
+}
+
+.artSvg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.copy {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.kicker {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin-top: 12px;
+  font-size: clamp(22px, 1.6vw, 28px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.summary {
+  margin-top: 14px;
+  color: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.studio .summary {
+  background: #f3f0ea;
+}
+
+.paper .summary {
+  background: #ffffff;
+}
+
+.field .summary {
+  background: #e7e2da;
+}
+
+.signal .summary {
+  background: #14082a;
+}
+
+.card:hover .art,
+.card:focus-within .art {
+  opacity: 0;
+}
+
+.card:hover .summary,
+.card:focus-within .summary {
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  left: 22px;
+  margin-top: 0;
+  opacity: 1;
+  text-align: left;
+  transform: translateY(-50%);
+}
+
+.card:focus-visible {
+  outline: 2px solid #feed2b;
+  outline-offset: -4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .art,
+  .summary {
+    transition: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .row {
+    height: 380px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+  }
+
+  .card {
+    flex: 0 0 78%;
+    height: 100%;
+    scroll-snap-align: start;
+  }
+}
+
+@media (max-width: 800px) {
+  .section {
+    padding-bottom: 56px;
+  }
+
+  .header {
+    padding: 40px 24px 20px;
+  }
+
+  .row {
+    height: 360px;
+    padding: 0 24px;
+  }
+
+  .card {
+    flex-basis: 86%;
+    height: 100%;
+  }
+
+  .copy {
+    padding: 18px;
+  }
+}

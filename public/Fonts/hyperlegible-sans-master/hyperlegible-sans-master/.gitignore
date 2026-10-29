@@ -1,0 +1,17 @@
+# mac
+.DS_Store
+__MACOSX/
+
+# python
+venv/
+venv 2/
+.oldvenv/
+**/__pycache__/
+*.pyc
+
+# build outputs
+out/
+build.stamp
+
+# local archives / scratch
+old/

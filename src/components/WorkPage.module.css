@@ -1,0 +1,103 @@
+.page {
+  background: #ffffff;
+  color: #111111;
+}
+
+.intro {
+  padding: 64px 80px;
+}
+
+.intro h1 {
+  font-size: clamp(40px, 5vw, 60px);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  max-width: 40em;
+  margin-top: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 56px;
+  align-items: start;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 420px;
+  overflow: hidden;
+}
+
+.blue {
+  background: #0249d9;
+}
+
+.light {
+  background: #f3f4f5;
+}
+
+.media img {
+  display: block;
+  width: auto;
+  height: 340px;
+  max-width: 88%;
+  object-fit: contain;
+}
+
+.card h2 {
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+.card p {
+  margin-top: 4px;
+  max-width: 36em;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #6b6b6b;
+}
+
+@media (max-width: 800px) {
+  .intro {
+    padding: 48px 24px;
+  }
+
+  .intro h1 {
+    font-size: 32px;
+  }
+
+  .description,
+  .card h2,
+  .card p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .row {
+    grid-template-columns: 1fr;
+    margin-top: 40px;
+    gap: 40px;
+  }
+
+  .media {
+    height: 320px;
+  }
+
+  .media img {
+    height: 250px;
+  }
+}
