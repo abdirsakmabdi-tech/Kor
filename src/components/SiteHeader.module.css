@@ -187,10 +187,9 @@
   .topbar {
     position: relative;
     height: 64px;
-    padding: 0 12px;
+    padding: 0 24px;
   }
 
-  .menuButton,
   .subnavToggle,
   .closeButton,
   .globeButton {
@@ -219,13 +218,12 @@
   }
 
   .menuButton {
-    color: #000000;
+    display: none;
   }
 
   .logoLink {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    transform: none;
   }
 
   .logo {

@@ -55,9 +55,11 @@
   }
 
   .portrait {
-    justify-self: center;
-    max-width: 220px;
-    max-height: 260px;
+    justify-self: start;
+    width: min(100%, 320px);
+    max-width: 320px;
+    max-height: none;
+    object-position: left top;
   }
 
   .statement {
