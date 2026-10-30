@@ -7,9 +7,9 @@
 .heading {
   margin-bottom: 32px;
   color: #111111;
-  font-size: 40px;
+  font-size: var(--text-section);
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
@@ -44,11 +44,21 @@
   object-fit: contain;
 }
 
+.media p.confidential {
+  margin: 0;
+  max-width: none;
+  color: #ffffff;
+  font-size: var(--text-card);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
 .card h3 {
   margin-top: 14px;
-  font-size: 14px;
+  font-size: var(--text-item);
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.25;
   letter-spacing: 0;
 }
 
@@ -56,9 +66,9 @@
   margin-top: 4px;
   max-width: 36em;
   color: #6b6b6b;
-  font-size: 14px;
+  font-size: var(--text-small);
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.25;
 }
 
 @media (max-width: 800px) {
@@ -67,7 +77,7 @@
   }
 
   .heading {
-    font-size: 28px;
+    font-size: var(--text-section);
   }
 
   .row {
@@ -76,8 +86,7 @@
 
   .card h3,
   .card p {
-    font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.35;
   }
 
   .media {

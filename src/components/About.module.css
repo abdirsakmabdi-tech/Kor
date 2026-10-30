@@ -1,146 +1,79 @@
 .section {
-  display: block;
-  height: auto;
+  background: #f3f3f3;
+  padding: 72px 80px 80px;
+  color: #111111;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(220px, 0.6fr);
+  gap: 32px 64px;
+  align-items: end;
+}
+
+.title {
+  max-width: 11em;
+  font-size: var(--text-display);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.title span {
+  color: var(--logo);
+}
+
+.intro p {
+  max-width: 22em;
+  margin: 0 0 8px;
+  font-size: var(--text-body);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 168px;
+  gap: 24px;
+  align-items: center;
+  min-height: 250px;
+  padding: 32px;
+  border-radius: 12px;
   background: var(--logo);
   color: #ffffff;
-  padding: 64px 80px 96px;
 }
 
-.layout {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  width: 100%;
-}
-
-.explorer {
-  display: grid;
-  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
-  gap: 48px;
-  align-items: start;
-}
-
-.tabs {
-  position: sticky;
-  top: 88px;
-  display: flex;
-  flex-direction: column;
-  align-self: start;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: #ffffff;
-}
-
-.tab {
+.card h3 {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  width: 100%;
-  min-height: 64px;
-  padding: 16px 22px;
-  border: 0;
-  border-bottom: 1px solid #e6e6e6;
-  border-radius: 0;
-  background: #ffffff;
-  color: #8a8a8a;
-  font: inherit;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.3;
-  text-align: left;
-  cursor: pointer;
-  transition: background-color 0.45s ease;
-}
-
-.tab svg {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.6;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.tab:last-child {
-  border-bottom: 0;
-}
-
-.tabSpacer {
-  width: 18px;
-  height: 18px;
-}
-
-.tabActive {
-  background: #ffffff;
-  color: #111111;
-  font-weight: 600;
-}
-
-.panels {
-  display: flex;
-  flex-direction: column;
-  gap: 88px;
-}
-
-.detail {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  min-width: 0;
-  padding: 28px;
-  background: #f3f3f3;
-  color: #111111;
-  scroll-margin-top: 96px;
-}
-
-.detail h3 {
-  margin: 0;
-  color: #111111;
-  font-size: clamp(32px, 3.2vw, 44px);
+  gap: 12px;
+  font-size: var(--text-card);
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.03em;
 }
 
-.lead {
-  max-width: 36em;
-  margin: 0;
-  color: #333333;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.5;
-}
-
-.points {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.points li {
-  display: flex;
+.arrow {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  min-height: 64px;
-  padding: 16px 22px;
-  border-radius: 0;
-  background: #ffffff;
-  color: #111111;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 1.3;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  flex: none;
 }
 
-.points svg {
-  flex-shrink: 0;
-  width: 18px;
-  height: 18px;
+.arrow svg {
+  width: 14px;
+  height: 14px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.6;
@@ -148,103 +81,60 @@
   stroke-linejoin: round;
 }
 
-.title {
-  max-width: none;
-  margin: 0 auto;
-  font-size: clamp(32px, 4vw, 48px);
+.card p {
+  max-width: 22em;
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: var(--text-small);
   font-weight: 400;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  text-align: center;
+  line-height: 1.25;
 }
 
-.mask {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: bottom;
-  margin-right: 0.28em;
+.mark {
+  width: 100%;
+  height: auto;
+  justify-self: end;
+  stroke: #ffffff;
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 }
 
-.mask:last-child {
-  margin-right: 0;
+.card:hover .arrow,
+.card:focus-visible .arrow {
+  background: #ffffff;
+  color: #111111;
 }
 
-.maskBlock {
-  display: block;
-  overflow: hidden;
-}
-
-.word,
-.line {
-  display: inline-block;
-  transform: translateY(-120%);
-}
-
-.line {
-  display: block;
-}
-
-.play .word,
-.play .line {
-  animation: about-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-@keyframes about-in {
-  from {
-    transform: translateY(-120%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .tab:hover {
-    color: #111111;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .word,
-  .line {
-    transform: none;
-    animation: none;
-  }
-
-  .tab {
-    transition: none;
-  }
+.card:focus-visible {
+  outline: 2px solid var(--logo);
+  outline-offset: 4px;
 }
 
 @media (max-width: 800px) {
   .section {
-    height: auto;
-    padding: 48px 24px 64px;
+    padding: 48px 24px 56px;
   }
 
-  .tabs {
-    position: static;
-  }
-
-  .explorer {
+  .intro,
+  .cards,
+  .card {
     grid-template-columns: 1fr;
-    gap: 20px;
   }
 
-  .detail {
-    gap: 16px;
+  .title,
+  .intro p,
+  .card p {
+    max-width: none;
   }
 
-  .title {
-    font-size: 28px;
+  .card {
+    min-height: 0;
+    padding: 24px;
   }
 
-  .detail h3 {
-    font-size: 32px;
+  .mark {
+    width: 120px;
   }
 
-  .points li {
-    font-size: 16px;
-  }
 }

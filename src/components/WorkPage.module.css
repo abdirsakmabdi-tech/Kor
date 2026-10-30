@@ -8,18 +8,18 @@
 }
 
 .intro h1 {
-  font-size: clamp(40px, 5vw, 60px);
+  font-size: var(--text-display);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.08;
   letter-spacing: -0.03em;
 }
 
 .description {
   max-width: 40em;
   margin-top: 24px;
-  font-size: 16px;
+  font-size: var(--text-lead);
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.25;
 }
 
 .row {
@@ -54,20 +54,30 @@
   object-fit: contain;
 }
 
+.media p.confidential {
+  margin: 0;
+  max-width: none;
+  color: #ffffff;
+  font-size: var(--text-card);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
 .card h2 {
   margin-top: 14px;
-  font-size: 14px;
+  font-size: var(--text-item);
   font-weight: 600;
-  line-height: 1.4;
+  line-height: 1.25;
   letter-spacing: 0;
 }
 
 .card p {
   margin-top: 4px;
   max-width: 36em;
-  font-size: 14px;
+  font-size: var(--text-small);
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.25;
   color: #6b6b6b;
 }
 
@@ -76,15 +86,10 @@
     padding: 48px 24px;
   }
 
-  .intro h1 {
-    font-size: 32px;
-  }
-
   .description,
   .card h2,
   .card p {
-    font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.35;
   }
 
   .row {

@@ -10,10 +10,8 @@ const projects = [
   },
   {
     id: "puntland",
-    name: "Puntland Development and Investment Bank",
-    description: "A public website for the bank.",
-    image: "/work/puntland.png?v=1",
-    imageAlt: "Puntland Development and Investment Bank website on a phone",
+    name: "Bank website",
+    confidential: true,
   },
 ];
 
@@ -29,11 +27,15 @@ export default function WorkPage() {
         <div className={styles.row}>
           {projects.map((project) => (
             <article key={project.id} className={styles.card}>
-              <div className={`${styles.media} ${project.id === "alliance" ? styles.blue : styles.light}`}>
-                <img src={project.image} alt={project.imageAlt} />
+              <div className={`${styles.media} ${styles.blue}`}>
+                {project.confidential ? (
+                  <p className={styles.confidential}>Confidential</p>
+                ) : (
+                  <img src={project.image} alt={project.imageAlt} />
+                )}
               </div>
               <h2>{project.name}</h2>
-              <p>{project.description}</p>
+              {project.description ? <p>{project.description}</p> : null}
             </article>
           ))}
         </div>

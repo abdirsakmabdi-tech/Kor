@@ -34,16 +34,16 @@
 .title {
   max-width: 12em;
   margin-top: 28px;
-  font-size: clamp(32px, 3.2vw, 48px);
+  font-size: var(--text-section);
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.1;
   letter-spacing: -0.03em;
 }
 
 .who {
   margin-top: 20px;
   color: #111111;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.08em;
   line-height: 1.4;
@@ -54,9 +54,9 @@
   max-width: 36em;
   margin-top: 20px;
   color: #333333;
-  font-size: 16px;
+  font-size: var(--text-body);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .brand {
@@ -79,14 +79,9 @@
     padding: 28px 0 0;
   }
 
-  .title {
-    max-width: none;
-    font-size: 32px;
-  }
-
+  .title,
   .statement {
     max-width: none;
-    font-size: 16px;
   }
 }
 
@@ -97,15 +92,6 @@
 
   .portrait {
     height: 320px;
-  }
-
-  .title {
-    font-size: 28px;
-  }
-
-  .who,
-  .statement {
-    font-size: 16px;
   }
 
   .who {

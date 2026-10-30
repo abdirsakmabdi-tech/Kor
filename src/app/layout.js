@@ -4,6 +4,11 @@ import "./globals.css";
 const outfit = localFont({
   src: [
     {
+      path: "../../public/Fonts/Outfit_Complete/Outfit_Complete/Fonts/WEB/fonts/Outfit-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
       path: "../../public/Fonts/Outfit_Complete/Outfit_Complete/Fonts/WEB/fonts/Outfit-Regular.woff2",
       weight: "400",
       style: "normal",

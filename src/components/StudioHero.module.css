@@ -1,0 +1,133 @@
+.runway {
+  position: relative;
+  height: calc(100dvh + 200dvh);
+  background: var(--logo);
+  color: #ffffff;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100dvh;
+  padding: 72px 80px 80px;
+  overflow: hidden;
+  background: var(--logo);
+}
+
+.copy {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: 100%;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: auto 0;
+}
+
+.mark {
+  width: min(112px, 18vw);
+  height: auto;
+  stroke: #ffffff;
+  stroke-width: 1.4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.copy h1 {
+  max-width: 14em;
+  margin: 0;
+  font-size: var(--text-section);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.caret {
+  animation: caret 1.4s ease-in-out infinite;
+}
+
+.reveal {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 36em;
+  opacity: 0;
+}
+
+.reveal p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  margin-top: 24px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.cta:hover {
+  background: #000000;
+}
+
+.cta:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+@keyframes caret {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .sticky {
+    padding: 64px 24px 48px;
+  }
+
+  .mark {
+    width: 72px;
+  }
+
+  .stack {
+    gap: 12px;
+  }
+
+  .copy h1 {
+    max-width: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+  }
+}

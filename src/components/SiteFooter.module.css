@@ -17,7 +17,7 @@
 }
 
 .brand span {
-  font-size: clamp(32px, 4vw, 44px);
+  font-size: var(--text-section);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -32,14 +32,14 @@
 }
 
 .links a {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.4;
 }
 
 .copy {
   margin-top: 36px;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 1.4;
 }
 
@@ -56,10 +56,6 @@
 
   .brand img {
     width: 32px;
-  }
-
-  .brand span {
-    font-size: 24px;
   }
 
   .links a {

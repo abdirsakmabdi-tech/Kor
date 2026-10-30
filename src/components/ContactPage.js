@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./ContactPage.module.css";
 
 const paths = [
@@ -74,18 +74,79 @@ const leaders = [
   },
 ];
 
+const inbox = "Abdirsak.m.abdi@gmail.com";
+
 export default function ContactPage() {
   const [sent, setSent] = useState(false);
+  const filmRef = useRef(null);
+
+  useEffect(() => {
+    const film = filmRef.current;
+    if (!film) return undefined;
+
+    const keepPlaying = () => {
+      if (document.hidden || !film.paused) return;
+      film.play().catch(() => {});
+    };
+
+    film.loop = true;
+    keepPlaying();
+    film.addEventListener("ended", keepPlaying);
+    document.addEventListener("visibilitychange", keepPlaying);
+
+    return () => {
+      film.removeEventListener("ended", keepPlaying);
+      document.removeEventListener("visibilitychange", keepPlaying);
+    };
+  }, []);
 
   function onSubmit(event) {
     event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const firstName = String(data.get("firstName") || "").trim();
+    const lastName = String(data.get("lastName") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const message = String(data.get("message") || "").trim();
+
+    if (String(data.get("_honey") || "").trim()) {
+      setSent(true);
+      return;
+    }
+
+    const subject = encodeURIComponent(`KOR Digital message from ${firstName} ${lastName}`);
+    const body = encodeURIComponent(`Name: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`);
+    const compose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(inbox)}&su=${subject}&body=${body}`;
+    const opened = window.open(compose, "_blank", "noopener,noreferrer");
+    if (!opened) {
+      window.location.href = compose;
+    }
     setSent(true);
   }
 
   return (
     <div className={styles.page}>
+      <section className={styles.welcome} aria-labelledby="contact-welcome">
+        <h1 id="contact-welcome">
+          Welcome to where things get interesting.
+          <br />
+          One global team. Where conversations become collaborations.
+          <br />
+          And together, we shape what’s next.
+        </h1>
+        <div className={styles.location}>
+          <h2>Our Location</h2>
+          <p>Garowe, Puntland Somalia</p>
+        </div>
+      </section>
+
+      <div className={styles.film}>
+        <video ref={filmRef} autoPlay muted loop playsInline preload="auto" aria-label="Buundo Garoowe">
+          <source src="/video/contact.mp4" type="video/mp4" />
+        </video>
+      </div>
+
       <section className={styles.intro} aria-labelledby="contact-title">
-        <h1 id="contact-title">Get in touch</h1>
+        <h2 id="contact-title">Get in touch</h2>
         <div className={styles.paths}>
           {paths.map((path) => (
             <article key={path.id} id={path.id === "find" ? undefined : path.id}>
@@ -138,10 +199,18 @@ export default function ContactPage() {
         <h2 id="message-title">Send a message</h2>
         {sent ? (
           <p className={styles.thanks} role="status">
-            Thank you. We have your note and will be in touch.
+            Gmail is opening with this note addressed to us. Send it there and we will reply.
           </p>
         ) : (
           <form className={styles.form} onSubmit={onSubmit}>
+            <input
+              className={styles.honey}
+              type="text"
+              name="_honey"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+            />
             <label>
               First name
               <input name="firstName" type="text" autoComplete="given-name" required />

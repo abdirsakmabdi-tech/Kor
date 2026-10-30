@@ -5,6 +5,14 @@
   --accent: #a100ff;
   --logo: #0249d9;
   --menu-hover: #002e8a;
+  --text-display: clamp(28px, 2.4vw, 44px);
+  --text-page: clamp(28px, 2.4vw, 44px);
+  --text-section: clamp(28px, 2.4vw, 44px);
+  --text-card: clamp(22px, 1.6vw, 26px);
+  --text-item: clamp(22px, 1.6vw, 26px);
+  --text-lead: 16px;
+  --text-body: 16px;
+  --text-small: 16px;
 }
 
 html,

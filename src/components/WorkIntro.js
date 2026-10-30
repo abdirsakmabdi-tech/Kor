@@ -11,11 +11,9 @@ const projects = [
   },
   {
     id: "puntland",
-    name: "Puntland Development and Investment Bank",
-    description: "A public website for the bank.",
-    image: "/work/puntland.png?v=1",
-    imageAlt: "Puntland Development and Investment Bank website on a phone",
-    tone: "light",
+    name: "Bank website",
+    tone: "blue",
+    confidential: true,
   },
 ];
 
@@ -29,10 +27,14 @@ export default function WorkIntro() {
         {projects.map((project) => (
           <article key={project.id} className={styles.card}>
             <div className={`${styles.media} ${styles[project.tone]}`}>
-              <img src={project.image} alt={project.imageAlt} />
+              {project.confidential ? (
+                <p className={styles.confidential}>Confidential</p>
+              ) : (
+                <img src={project.image} alt={project.imageAlt} />
+              )}
             </div>
             <h3>{project.name}</h3>
-            <p>{project.description}</p>
+            {project.description ? <p>{project.description}</p> : null}
           </article>
         ))}
       </div>

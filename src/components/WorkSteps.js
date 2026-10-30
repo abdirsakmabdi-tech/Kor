@@ -41,11 +41,9 @@ export default function WorkSteps() {
       <ol className={styles.list}>
         {steps.map((step, index) => (
           <li key={step.title} className={styles.step}>
-            <div>
-              <span className={styles.index}>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{step.title}</h3>
-            </div>
-            <div>
+            <span className={styles.index}>{String(index + 1).padStart(2, "0")}</span>
+            <h3>{step.title}</h3>
+            <div className={styles.body}>
               <p>{step.text}</p>
               <ul>
                 {step.points.map((point) => (
