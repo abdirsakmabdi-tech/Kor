@@ -73,7 +73,7 @@
 .marked path {
   fill: none;
   stroke: #feed2b;
-  stroke-width: 7;
+  stroke-width: 4;
   stroke-linecap: round;
   vector-effect: non-scaling-stroke;
 }
