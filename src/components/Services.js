@@ -139,19 +139,19 @@ export default function Services() {
             style={{ "--wash": service.wash }}
           >
             <span className={styles.wash} aria-hidden="true" />
-            <span className={styles.top}>
+            <div className={styles.top}>
               <span className={styles.icon}>
                 <ServiceIcon name={service.icon} />
               </span>
               <h3 className={styles.title}>{service.title}</h3>
-            </span>
-            <span className={styles.bottom}>
+            </div>
+            <div className={styles.bottom}>
               <p className={styles.summary}>{service.summary}</p>
               <span className={styles.cta}>
                 <span className={styles.sheen} aria-hidden="true" />
                 <span className={styles.ctaLabel}>Learn more</span>
               </span>
-            </span>
+            </div>
           </a>
           </div>
         ))}
