@@ -29,7 +29,7 @@ export default function Hero() {
             </span>
           </span>
         </h1>
-        <a className={styles.cta} href="#services">
+        <a className={styles.cta} href="#about">
           See what we do
         </a>
       </div>

@@ -41,7 +41,7 @@ export const engines = [
     title: "Venture Builder",
     mark: "blocks",
     tone: "blue",
-    lead: "We build, run and distribute our own apps as independent businesses.",
+    lead: "We build, run and distribute our own apps as independent businesses. We help startups run theirs, look for investing, and give training for running a business.",
     emphasis: "We build, run and distribute our own apps",
     points: [
       {
