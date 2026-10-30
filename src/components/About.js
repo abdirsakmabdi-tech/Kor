@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./About.module.css";
@@ -18,7 +18,6 @@ const titleWords = [
 const engines = [
   {
     id: "studio",
-    label: "Engine A",
     title: "Product Studio",
     note: "Client services",
     lead: "We work with organizations to discover, shape, design and build digital products.",
@@ -47,7 +46,6 @@ const engines = [
   },
   {
     id: "venture",
-    label: "Engine B",
     title: "Venture Builder",
     note: "Our own products",
     lead: "We build, run and distribute our own apps as independent businesses.",
@@ -60,28 +58,10 @@ const engines = [
   },
 ];
 
-function EngineIcon({ id }) {
-  if (id === "studio") {
-    return (
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4 7.5 12 4l8 3.5-8 3.5L4 7.5Z" />
-        <path d="M4 12l8 3.5L20 12" />
-        <path d="M4 16.5 12 20l8-3.5" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M12 21s6-5.2 6-10a6 6 0 1 0-12 0c0 4.8 6 10 6 10Z" />
-      <circle cx="12" cy="11" r="2.2" />
-    </svg>
-  );
-}
-
 export default function About() {
   const sectionRef = useRef(null);
   const [play, setPlay] = useState(false);
+  const [activeId, setActiveId] = useState(engines[0].id);
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -105,6 +85,46 @@ export default function About() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return undefined;
+
+    let frame = 0;
+
+    const update = () => {
+      const marker = window.innerHeight * 0.38;
+      let current = engines[0].id;
+      section.querySelectorAll("[data-engine]").forEach((panel) => {
+        if (panel.getBoundingClientRect().top <= marker) {
+          current = panel.dataset.engine;
+        }
+      });
+      setActiveId(current);
+    };
+
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(update);
+    };
+
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
+  function showEngine(id) {
+    const panel = document.getElementById(`about-panel-${id}`);
+    if (!panel) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    panel.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+  }
+
   return (
     <section
       className={play ? `${styles.section} ${styles.play}` : styles.section}
@@ -123,46 +143,58 @@ export default function About() {
               </span>
             ))}
           </h2>
-          <p className={styles.description}>
-            <span className={styles.maskBlock}>
-              <span
-                className={styles.line}
-                style={{ animationDelay: `${titleWords.length * 0.12}s` }}
-              >
-                Make digital products easy to use, and help organizations and founders
-                turn ideas into products people actually adopt.
-              </span>
-            </span>
-          </p>
         </div>
-        <div className={styles.stack}>
-          {engines.map((engine, index) => (
-            <div className={styles.cardMask} key={engine.id}>
-            <article
-              className={`${styles.card} ${styles[engine.id]} ${styles.cardRise}`}
-              style={{ animationDelay: `${1.2 + index * 0.22}s` }}
-            >
-              <div className={styles.cardHead}>
-                <span className={styles.icon}>
-                  <EngineIcon id={engine.id} />
-                </span>
-                <div>
-                  <p className={styles.engineLabel}>{engine.label}</p>
-                  <h3>{engine.title}</h3>
-                  <p className={styles.note}>{engine.note}</p>
-                </div>
-              </div>
-              <p className={styles.lead}>{engine.lead}</p>
-              <ul className={styles.points}>
-                {engine.points.map(([name, detail]) => (
-                  <li key={name}>
-                    <strong>{name}:</strong> {detail}
-                  </li>
-                ))}
-              </ul>
-            </article>
-            </div>
-          ))}
+        <div className={styles.explorer}>
+          <div className={styles.tabs} role="tablist" aria-label="How we work">
+            {engines.map((engine) => {
+              const selected = engine.id === activeId;
+              return (
+                <button
+                  key={engine.id}
+                  className={selected ? `${styles.tab} ${styles.tabActive}` : styles.tab}
+                  type="button"
+                  role="tab"
+                  id={`about-tab-${engine.id}`}
+                  aria-selected={selected}
+                  aria-controls={`about-panel-${engine.id}`}
+                  onClick={() => showEngine(engine.id)}
+                >
+                  <span>{engine.title}</span>
+                  {selected ? (
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M5 12h14M13 6l6 6-6 6" />
+                    </svg>
+                  ) : (
+                    <span className={styles.tabSpacer} aria-hidden="true" />
+                  )}
+                </button>
+              );
+            })}
+          </div>
+          <div className={styles.panels}>
+            {engines.map((engine) => (
+              <article
+                className={styles.detail}
+                id={`about-panel-${engine.id}`}
+                key={engine.id}
+                data-engine={engine.id}
+                aria-labelledby={`about-tab-${engine.id}`}
+              >
+                <h3>{engine.title}</h3>
+                <p className={styles.lead}>{engine.lead}</p>
+                <ul className={styles.points}>
+                  {engine.points.map(([name]) => (
+                    <li key={name}>
+                      <span>{name}</span>
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14M13 6l6 6-6 6" />
+                      </svg>
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -67,79 +67,63 @@ export default function SiteHeader() {
 
   return (
     <header>
-      <div className={styles.topbar}>
-        <button
-          className={styles.menuButton}
-          type="button"
-          aria-label="Menu"
-          aria-expanded={menuOpen}
-          onClick={() => {
-            setSearchOpen(false);
-            setMenuOpen(true);
-          }}
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" />
-          </svg>
-        </button>
-        <a className={styles.logoLink} href="/" aria-label="KOR Digital home">
-          <img
-            className={styles.logo}
-            src="/Logos/Untitled.svg"
-            alt="KOR Digital"
-          />
-        </a>
-        <form
-          className={styles.search}
-          role="search"
-          onSubmit={(event) => event.preventDefault()}
-        >
-          {searchOpen ? (
-            <input
-              className={styles.searchInput}
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              autoFocus
-            />
-          ) : null}
-          <button
-            className={styles.searchButton}
-            type="button"
-            aria-label={searchOpen ? "Close search" : "Search"}
-            aria-expanded={searchOpen}
-            onClick={() => setSearchOpen((open) => !open)}
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <circle cx="10.5" cy="10.5" r="6.25" />
-              <path d="M15.2 15.2 20 20" />
-            </svg>
-          </button>
-        </form>
-      </div>
       <div className={styles.subnav}>
         <div className={styles.subnavBar}>
-          <a className={styles.brand} href="/">
+          <a className={styles.brand} href="/" aria-label="KOR Digital home">
+            <img
+              className={styles.logo}
+              src="/Logos/Untitled.svg"
+              alt=""
+            />
             <span className={styles.menuLabel}>KOR Digital</span>
           </a>
-          <nav className={styles.links} aria-label="Page">
-            {pageLinks.map((link) => (
-              <a key={link.href} href={link.href}>
-                <span className={styles.menuLabel}>{link.label}</span>
-              </a>
-            ))}
-          </nav>
-          <button
-            className={styles.subnavToggle}
-            type="button"
-            aria-label={pageOpen ? "Collapse navigation" : "Expand navigation"}
-            aria-expanded={pageOpen}
-            onClick={() => setPageOpen((open) => !open)}
-          >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6 9.5 12 15.5 18 9.5" />
-            </svg>
-          </button>
+          <div className={styles.subnavEnd}>
+            <nav className={styles.links} aria-label="Page">
+              {pageLinks.map((link) => (
+                <a key={link.href} href={link.href}>
+                  <span className={styles.menuLabel}>{link.label}</span>
+                </a>
+              ))}
+            </nav>
+            <form
+              className={styles.search}
+              role="search"
+              onSubmit={(event) => event.preventDefault()}
+            >
+              {searchOpen ? (
+                <input
+                  className={styles.searchInput}
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                  autoFocus
+                />
+              ) : null}
+              <button
+                className={styles.searchButton}
+                type="button"
+                aria-label={searchOpen ? "Close search" : "Search"}
+                aria-expanded={searchOpen}
+                onClick={() => setSearchOpen((open) => !open)}
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="10.5" cy="10.5" r="6.25" />
+                  <path d="M15.2 15.2 20 20" />
+                </svg>
+              </button>
+            </form>
+            <button
+              className={styles.subnavToggle}
+              type="button"
+              aria-label={pageOpen ? "Collapse navigation" : "Expand navigation"}
+              aria-expanded={pageOpen}
+              onClick={() => setPageOpen((open) => !open)}
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 9.5 12 15.5 18 9.5" />
+              </svg>
+            </button>
+          </div>
         </div>
         {pageOpen ? (
           <nav className={styles.pageMenu} aria-label="Page">

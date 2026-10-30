@@ -1,68 +1,92 @@
 .section {
   display: grid;
-  grid-template-columns: 280px minmax(280px, 36em);
-  justify-content: center;
-  align-items: center;
-  gap: 48px;
-  padding: 88px 80px;
-  min-height: 80vh;
+  grid-template-columns: minmax(280px, 1fr) minmax(320px, 1fr);
+  align-items: stretch;
   background: #ffffff;
-  color: #000000;
+  color: #111111;
+  padding: 64px 80px;
 }
 
 .portrait {
   display: block;
   width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  object-position: center 18%;
+  background: #f3f4f5;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 56px 64px;
+  background: #ffffff;
+}
+
+.mark {
+  display: block;
+  width: 42px;
   height: auto;
-  max-height: 340px;
-  object-fit: contain;
-  object-position: center top;
+}
+
+.title {
+  max-width: 12em;
+  margin-top: 28px;
+  font-size: clamp(32px, 3.2vw, 48px);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.who {
+  margin-top: 20px;
+  color: #111111;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .statement {
-  max-width: 22em;
-  font-size: 24px;
+  max-width: 36em;
+  margin-top: 20px;
+  color: #333333;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.35;
-  letter-spacing: -0.03em;
+  line-height: 1.6;
 }
 
 .brand {
   color: var(--logo);
 }
 
-.person {
-  margin-top: 24px;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.3;
-}
-
-.role {
-  margin-top: 4px;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.4;
-}
-
 @media (max-width: 1024px) {
   .section {
     grid-template-columns: 1fr;
-    justify-items: stretch;
-    gap: 24px;
-    min-height: 0;
-    padding: 64px 24px;
+    padding: 48px 24px;
   }
 
   .portrait {
-    justify-self: stretch;
     width: 100%;
+    height: 420px;
+    min-height: 0;
+  }
+
+  .copy {
+    padding: 28px 0 0;
+  }
+
+  .title {
     max-width: none;
-    max-height: none;
+    font-size: 32px;
   }
 
   .statement {
     max-width: none;
+    font-size: 16px;
   }
 }
 
@@ -71,17 +95,20 @@
     padding: 48px 24px;
   }
 
-  .statement {
-    font-size: 20px;
-    line-height: 1.45;
+  .portrait {
+    height: 320px;
   }
 
-  .person,
-  .role {
+  .title {
+    font-size: 28px;
+  }
+
+  .who,
+  .statement {
     font-size: 16px;
   }
 
-  .person {
-    margin-top: 20px;
+  .who {
+    letter-spacing: 0.04em;
   }
 }
