@@ -41,7 +41,7 @@ export const engines = [
     title: "Venture Builder",
     mark: "blocks",
     tone: "blue",
-    lead: "We build, run and distribute our own apps as independent businesses. We help startups run theirs, look for investing, and give training for running a business.",
+    lead: "We build, run and distribute our own apps as independent businesses. We help startups run theirs, look for investment, and deliver business training to startup founders.",
     emphasis: "We build, run and distribute our own apps",
     points: [
       {
@@ -59,6 +59,18 @@ export const engines = [
       {
         name: "Operate the winners",
         detail: "Support, growth, distribution and monetization.",
+      },
+      {
+        name: "Help startups run",
+        detail: "We help startups run their own businesses day to day.",
+      },
+      {
+        name: "Look for investment",
+        detail: "We help founders look for investment when the venture is ready.",
+      },
+      {
+        name: "Business training for founders",
+        detail: "We deliver business training to startup founders on running the company.",
       },
     ],
   },

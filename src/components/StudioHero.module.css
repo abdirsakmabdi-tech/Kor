@@ -55,11 +55,8 @@
 }
 
 .reveal {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  max-width: 36em;
+  max-width: 42em;
+  margin-top: 36px;
   opacity: 0;
 }
 
@@ -107,7 +104,15 @@
 
 @media (max-width: 800px) {
   .sticky {
-    padding: 64px 24px 48px;
+    height: auto;
+    min-height: calc(100dvh - 52px);
+    padding: 56px 24px 48px;
+    justify-content: flex-start;
+  }
+
+  .copy {
+    justify-content: flex-start;
+    height: auto;
   }
 
   .mark {
@@ -120,6 +125,14 @@
 
   .copy h1 {
     max-width: none;
+  }
+
+  .reveal {
+    margin-top: 20px;
+  }
+
+  .cta {
+    margin-top: 20px;
   }
 }
 
