@@ -1,20 +1,15 @@
 import styles from "./SiteFooter.module.css";
 
-const primaryLinks = [
-  { href: "/contact#join", label: "Careers" },
-  { href: "/#home", label: "About Us" },
-  { href: "/contact", label: "Contact Us" },
-  { href: "/contact#find", label: "Locations" },
+const links = [
+  { href: "/#home", label: "Home" },
+  { href: "/#about", label: "About Us" },
+  { href: "/#services", label: "Our Services" },
+  { href: "/product-studio", label: "Product Studio" },
+  { href: "/venture-builder", label: "Venture Builder" },
   { href: "/work", label: "Our Work" },
   { href: "/#news", label: "News" },
-  { href: "/#services", label: "Our Services" },
-  { href: "/contact", label: "Privacy Statement" },
-  { href: "/contact", label: "Terms & Conditions" },
-];
-
-const secondaryLinks = [
-  { href: "/contact", label: "Cookie Policy" },
-  { href: "/contact", label: "Accessibility Statement" },
+  { href: "/contact", label: "Contact Us" },
+  { href: "/contact#find", label: "Locations" },
 ];
 
 export default function SiteFooter() {
@@ -25,14 +20,7 @@ export default function SiteFooter() {
         <span>KOR Digital</span>
       </a>
       <ul className={styles.links}>
-        {primaryLinks.map((link) => (
-          <li key={link.label}>
-            <a href={link.href}>{link.label}</a>
-          </li>
-        ))}
-      </ul>
-      <ul className={styles.links}>
-        {secondaryLinks.map((link) => (
+        {links.map((link) => (
           <li key={link.label}>
             <a href={link.href}>{link.label}</a>
           </li>
