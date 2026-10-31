@@ -166,6 +166,10 @@
   transition: transform 0.6s ease;
 }
 
+.brand .menuLabel::after {
+  content: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .brand:hover::before,
   .links a:hover::before,
@@ -175,7 +179,6 @@
     background: var(--menu-hover);
   }
 
-  .brand:hover .menuLabel::after,
   .links a:hover .menuLabel::after,
   .pageMenu a:hover .menuLabel::after,
   .menuRow:hover .menuLabel::after,
