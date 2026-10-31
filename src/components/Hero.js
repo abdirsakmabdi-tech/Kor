@@ -10,7 +10,8 @@ export default function Hero() {
         </h1>
         <p className={styles.support}>
           We combine business and technology to design, build and ship digital
-          products, and we teach founders how to run startups.
+          products, and we help founders how to turn their tech ideas into
+          startups.
         </p>
         <a
           className={styles.cta}

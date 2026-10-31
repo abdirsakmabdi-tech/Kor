@@ -11,7 +11,7 @@ const projects = [
   },
   {
     id: "puntland",
-    name: "Bank website",
+    name: "Bank Application System",
     tone: "blue",
     confidential: true,
   },
