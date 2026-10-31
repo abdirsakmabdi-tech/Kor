@@ -13,12 +13,7 @@ export default function Hero() {
           products, and we help founders how to turn their tech ideas into
           startups.
         </p>
-        <a
-          className={styles.cta}
-          href="https://wa.me/252907625513"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className={styles.cta} href="/contact">
           Reach to us
           <span aria-hidden="true">→</span>
         </a>
