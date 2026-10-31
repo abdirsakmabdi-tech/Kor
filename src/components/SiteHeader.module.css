@@ -56,6 +56,12 @@
   stroke-linecap: round;
 }
 
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
 .subnav {
   background: var(--logo);
   color: #ffffff;
@@ -268,7 +274,7 @@
   .overlay {
     position: fixed;
     inset: 0;
-    z-index: 30;
+    z-index: 50;
     display: flex;
     flex-direction: column;
     overflow-y: auto;

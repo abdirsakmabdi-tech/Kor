@@ -61,7 +61,7 @@ function PathIcon({ name }) {
 const leaders = [
   {
     name: "Abdirsak M. Abdi",
-    role: "CEO of Kor",
+    role: "CEO",
     image: "/team/abdirsak.jpg?v=2",
   },
   {
@@ -69,7 +69,15 @@ const leaders = [
     role: "Co-founder",
   },
   {
-    name: "Sea Salam",
+    name: "Sead Salam",
+    role: "Contributor",
+  },
+  {
+    name: "Ahmed Jama",
+    role: "Contributor",
+  },
+  {
+    name: "Abdirshid Isse",
     role: "Contributor",
   },
 ];
@@ -165,7 +173,7 @@ export default function ContactPage() {
       </section>
 
       <section className={styles.quote} aria-label="From the CEO">
-        <img src="/team/abdirsak.jpg?v=2" alt="Abdirsak M. Abdi, CEO of Kor" />
+        <img src="/team/abdirsak.jpg?v=2" alt="Abdirsak M. Abdi, CEO" />
         <div className={styles.quoteCopy}>
           <p>
             Making a great product requires a balanced user interface, engineering

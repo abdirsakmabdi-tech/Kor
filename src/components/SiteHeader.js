@@ -66,7 +66,7 @@ export default function SiteHeader() {
   }
 
   return (
-    <header>
+    <header className={styles.header}>
       <div className={styles.subnav}>
         <div className={styles.subnavBar}>
           <a className={styles.brand} href="/" aria-label="KOR Digital home">
