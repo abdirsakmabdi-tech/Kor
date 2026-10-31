@@ -52,6 +52,14 @@
   animation-delay: 2s;
 }
 
+.play .d6 {
+  animation-delay: 2.4s;
+}
+
+.play .d7 {
+  animation-delay: 2.8s;
+}
+
 .cardMask {
   overflow: hidden;
   min-height: 420px;
@@ -70,7 +78,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 

@@ -40,6 +40,24 @@ const services = [
       "Cloud foundations a product can launch and grow on. Hosting, integrations, and guardrails that keep it secure and ready to scale.",
     icon: "platform",
   },
+  {
+    id: "consultancy",
+    title: "Product Management Consultancy",
+    wash: "#0249d9",
+    ink: "light",
+    summary:
+      "Priorities, roadmaps, and delivery practices so teams build the right product—and keep shipping with clarity.",
+    icon: "consultancy",
+  },
+  {
+    id: "ai",
+    title: "AI Applications",
+    wash: "#faf3aa",
+    ink: "dark",
+    summary:
+      "Find and ship AI that fits real workflows—from use-case choice and pilots to features people actually adopt.",
+    icon: "ai",
+  },
 ];
 
 function ServiceIcon({ name }) {
@@ -76,6 +94,28 @@ function ServiceIcon({ name }) {
     );
   }
 
+  if (name === "consultancy") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M7 4h10a2 2 0 0 1 2 2v14l-7-3.2L5 20V6a2 2 0 0 1 2-2Zm0 1.5A.5.5 0 0 0 6.5 6v11.2l5.5-2.5 5.5 2.5V6a.5.5 0 0 0-.5-.5H7Zm2 3.25h6v1.5H9v-1.5Zm0 3.5h6v1.5H9v-1.5Z"
+        />
+      </svg>
+    );
+  }
+
+  if (name === "ai") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M12 2.8 13.2 8l5 1.2-5 1.2L12 15.6l-1.2-5.2-5-1.2 5-1.2L12 2.8Zm6.5 10.4 1.1 3.3 3.3 1.1-3.3 1.1-1.1 3.3-1.1-3.3-3.3-1.1 3.3-1.1 1.1-3.3ZM4.8 13.2l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9.9-2.6Z"
+        />
+      </svg>
+    );
+  }
+
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path
@@ -86,7 +126,7 @@ function ServiceIcon({ name }) {
   );
 }
 
-const cardDelays = [styles.d2, styles.d3, styles.d4, styles.d5];
+const cardDelays = [styles.d2, styles.d3, styles.d4, styles.d5, styles.d6, styles.d7];
 
 export default function Services() {
   const sectionRef = useRef(null);
