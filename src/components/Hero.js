@@ -5,8 +5,8 @@ export default function Hero() {
     <section className={styles.hero} id="home" aria-labelledby="hero-title">
       <div className={styles.inner}>
         <h1 className={styles.headline} id="hero-title">
-          KOR Digital turns ideas into{" "}
-          <span className={styles.emphasis}>shipped</span> products
+          <span className={styles.line}>KOR Digital turns</span>
+          <span className={styles.lineItalic}>ideas into shipped products</span>
         </h1>
         <p className={styles.support}>
           We combine business and technology to design, build and ship digital

@@ -3,17 +3,18 @@ import styles from "./StudioHero.module.css";
 export default function StudioHero({ title, overview }) {
   if (!overview) return null;
 
-  const bridge = overview.bridge || "turns ideas into";
-  const emphasisWord = overview.emphasisWord || "shipped";
-  const closer = overview.closer || "products";
-  const headline = `${title} ${bridge} ${emphasisWord} ${closer}`;
+  const lineOne = overview.lineOne || "turns";
+  const lineTwo = overview.lineTwo || "ideas into shipped products";
+  const headline = `${title} ${lineOne} ${lineTwo}`;
 
   return (
     <section className={styles.manifesto} aria-labelledby="engine-title">
       <div className={styles.manifestoInner}>
         <h1 id="engine-title" className={styles.manifestoTitle}>
-          {title} {bridge} <span className={styles.emphasis}>{emphasisWord}</span>{" "}
-          {closer}
+          <span className={styles.line}>
+            {title} {lineOne}
+          </span>
+          <span className={styles.lineItalic}>{lineTwo}</span>
         </h1>
         <p className={styles.support}>{overview.body}</p>
         <a className={styles.cta} href="/contact">

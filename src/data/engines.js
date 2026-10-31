@@ -15,9 +15,8 @@ export const engines = [
       summary:
         "We work with organizations to discover, shape, design and build digital products.",
       body: "We work with organizations to discover, shape, design and build digital products—from research and strategy through UX, AI adoption, and software a team can keep shipping.",
-      bridge: "turns ideas into",
-      emphasisWord: "shipped",
-      closer: "products",
+      lineOne: "turns",
+      lineTwo: "ideas into shipped products",
     },
     points: [
       {
@@ -57,9 +56,8 @@ export const engines = [
       summary:
         "We select high-potential startup ideas and help founders build, ship, and scale them—without burning capital.",
       body: "At KOR Digital, our Venture Builder isn't open to just anyone. We carefully screen and select early-stage business ideas and founders with real promise. Once selected, we act as your fractional CTO, product engineering team, and startup accelerator, working side-by-side with you to turn your vision into an investor-ready company.",
-      bridge: "turns selected ideas into",
-      emphasisWord: "investor-ready",
-      closer: "companies",
+      lineOne: "turns",
+      lineTwo: "selected ideas into investor-ready companies",
     },
     processTitle: "Our Process",
     points: [

@@ -22,15 +22,19 @@
   font-family: var(--font-baskervville), Georgia, "Times New Roman", serif;
   font-size: clamp(36px, 5vw, 58px);
   font-weight: 400;
-  line-height: 1.18;
+  line-height: 1.12;
   letter-spacing: -0.015em;
-  text-wrap: balance;
 }
 
-.emphasis {
+.line,
+.lineItalic {
+  display: block;
+  white-space: nowrap;
+}
+
+.lineItalic {
   font-style: italic;
   font-weight: 400;
-  color: inherit;
 }
 
 .support {
