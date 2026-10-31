@@ -11,10 +11,10 @@
 .manifestoInner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   max-width: 38rem;
-  text-align: left;
+  text-align: center;
 }
 
 .manifestoTitle {
@@ -83,12 +83,14 @@
   .manifesto {
     min-height: calc(100dvh - 52px);
     padding: clamp(96px, 18vh, 160px) 24px 64px;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-start;
   }
 
   .manifestoInner {
     max-width: none;
+    align-items: center;
+    text-align: center;
   }
 
   .manifestoTitle {
