@@ -72,9 +72,9 @@
 
 @media (max-width: 800px) {
   .hero {
-    min-height: calc(100dvh - 52px);
-    padding: 64px 24px;
-    align-items: center;
+    min-height: 0;
+    padding: 48px 24px 28px;
+    align-items: flex-start;
   }
 
   .inner {
